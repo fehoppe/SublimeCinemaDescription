@@ -1,7 +1,7 @@
-# SublimeCinemaDescription
-SublimeText syntax definition for Cinema 4D description resources. 
+# Cinema 4D Description Syntax for SublimeText
+A SublimeText syntax definition for Cinema 4D description resources. 
 
-This definition has been designed for description resources and captures its *.res and *.str files. It can also be used for dialog resources, but won't capture all features of it. There will also be some missing flags and types for resource files, due to the format being rather extensive. This mostly serves as case of "good enough" ;).
+This definition has been designed for description resources and captures its *.res and *.str files. It can also be used for dialog resources, but will not capture all features of it. Some of the more exotic flags and types are also missing for resource files. This mostly serves as case of "good enough" and will render the vast majority of resource files correctly.
 
 The definition captures:
 * .res & *.str files
