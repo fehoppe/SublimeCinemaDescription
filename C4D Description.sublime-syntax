@@ -1,0 +1,30 @@
+%YAML 1.2
+---
+file_extensions: [res, str]
+scope: source.c4d-description
+
+contexts:
+  main:
+    # Container like structures
+    - match: '(\s|^\s*)(CONTAINER|GROUP|CYCLE|STRINGTABLE)(\s)'
+      scope: entity.name.class.c4d-description
+ 
+    # Types
+    - match: '(\s|^\s*)(BOOL|BASETIME|BITMAPBUTTON|BUTTON|COLOR|DATETIME|DYNAMIC|FILENAME|FONT|GRADIENT|HYPERLINK|IN_EXCLUDE|LINK|LONG|MATRIX|PRIORITY|REAL|SEPARATOR|SHADERLINK|SPLINE|STATICTEXT|STRING|TEXTURE|VECTOR)(\s)'
+      scope: entity.name.function.c4d-description
+
+    # Flags
+    - match: '(\s)(ACCEPT|ALPHA|ANIM|COLOR|COLUMNS|CREATEPORT|CUSTOMGUI|DATE_CONTROL|DEFAULT|DIRECTORY|EDIT_H|EDIT_V|EDITPORT|HIDDEN|FIT_H|FIT_V|HIDE|ICC_BASEDOCUMENT|INCLUDE|INIT_STATE|INPORT|IS_LINK|LINE|LINK_DEST|MATEDCOLUMNS |MAX|MAXEX|MAXPORTS|MAXSLIDER|MIN|MINEX|MINPORTS|MINSIZE_H|MINSLIDER|MULTIPLE|NAME|NEEDCONNECTION|NO_SECONDS|NOCAMERA|NOTMOVABLE|NOW_BUTTON|NUM_FLAGS|OPEN|OUTPORT|PAGE|PARENTCOLLAPSE|PARENTID|PARENTMSG|PORTONLY|REFUSE|SAVE|SCALE_H|SCALE_V|SHOW|SHOW_LABELS|SHOWGRID_H|SHOWGRID_V|STATIC_TEXT|STATICPORT|STEP|TIME_CONTROL|UNIT|X_MAX|X_MIN|X_STEPS|X_TEXT|Y_MAX|Y_MIN|Y_STEPS|Y_TEXT)(\s|;)'
+      scope: variable.c4d-description
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.c4d-description
+
+    # Strings
+    - match: '(?<=").*(?=")'
+      scope: string.c4d-description
+
+    # Comments
+    - match: '//.*$'
+      scope: punctuation.definition.comment.c4d-description
